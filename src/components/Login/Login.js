@@ -17,6 +17,7 @@ export default class Login extends Component {
     }
 
     onChange = (event) => {    
+
         const { text} = event.nativeEvent;
         this.setState({login:text});
       };
@@ -32,7 +33,7 @@ export default class Login extends Component {
                     errorMessage={this.state.buttonClick === true ? 'ENTER A VALID ERROR HERE' : ""}
                 />
 
-                <Button title="Reset" onPress={() => this.onPress(this.state.login)} />
+                <Button title="Reset" onPress={() => this.props.navigation.navigate('Reset')} />
 
             </View>
         )
